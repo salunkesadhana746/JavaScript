@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swaping 2 number</title>
+</head>
+
+<body>
+    <script>
+        // swap two without using third variable
+
+        function swap(x, y) {
+            x = x + y;
+            y = x - y;
+            x = x - y;
+
+            console.log ("x = "+x);
+            console.log ("y = "+y);
+        }
+
+        swap(20, 30);
+        swap(50, 80);
+       
+    </script>
+</body>
+
+</html>
