@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting with condition</title>
+</head>
+
+<body>
+    <script>
+        //wap to check user eligible for vote or not asing nested if else using function
+
+        function check(age) {
+            if (age > 18) {
+
+                if (age > 100) {
+                    console.log("You are too old, you cannot vote. !");
+                }
+                else {
+                    console.log("you are eligible for vote !");
+                }
+            }
+            else {
+
+                if (age == 0) {
+                    console.log("Invalid age !");
+                }
+                else {
+                    console.log("you are not eligible for vote !");
+                }
+            }
+        }
+
+        check(101);
+        check(19);
+        check(0);
+        check(-19);
+    </script>
+</body>
+
+</html>
