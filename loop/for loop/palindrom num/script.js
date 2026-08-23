@@ -1,7 +1,7 @@
 // wap to check number is palindrom or not.
 
 let num = 123; 
-let original = num;
+let start = num;
 let reverse = 0;
 
 while (num > 0) 
@@ -10,7 +10,7 @@ while (num > 0)
     num = Math.floor(num / 10);
 }
 
-if (original == reverse) 
+if (start == reverse) 
 {
     console.log("This number is a palindrom.");
 } 

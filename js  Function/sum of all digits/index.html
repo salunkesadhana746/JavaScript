@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of all digits</title>
+</head>
+
+<body>
+    <script>
+        //wap to find sum of all digits of a numbers.
+
+        function sumofalldigits(num){
+            let sum = 0;
+
+            while(num > 0){
+                let id = num % 10;
+                sum = sum + id;
+                num = Math.floor(num / 10);
+            }
+
+            console.log("Sum of all digits = "+sum);
+        }
+
+        sumofalldigits(123);
+        sumofalldigits(2008);
+    </script>
+</body>
+
+</html>

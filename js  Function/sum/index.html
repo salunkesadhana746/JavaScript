@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum</title>
+</head>
+
+<body>
+    <script>
+        //wap to find sum of 1 to n using do..while loop.
+
+        function sum1ton(num) {
+            let sum = 0;
+            let i = 1;
+            do {
+                sum = sum + i;
+                i++;
+            }
+            while (i <= num);
+
+            console.log("sum 1 to n = "+sum);
+        }
+
+        sum1ton(5);
+        sum1ton(10);
+    </script>
+</body>
+
+</html>

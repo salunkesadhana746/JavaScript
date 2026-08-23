@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 num max</title>
+</head>
+
+<body>
+    <script>
+        //wap to max find from 3 variable using else if ladder.
+        function maxnum(x, y, z) {
+            if (x > y) {
+                if (x > z) {
+                    console.log("x is max !");
+                }
+                else {
+                    console.log("z is max !");
+                }
+            }
+            else {
+                if (y > z) {
+                    console.log("y is max !");
+                }
+                else {
+                    console.log("z is max !");
+                }
+            }
+        }
+
+        maxnum(30, 10, 20);
+        maxnum(5, 20, 10);
+        maxnum(10, 20, 80);
+    </script>
+</body>
+
+</html>

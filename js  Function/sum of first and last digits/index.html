@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of first and last digits</title>
+</head>
+
+<body>
+    <script>
+        //wap to find sum of first and last digits of a numbers
+
+        function sum(num){
+            let id = num % 10;
+            let fs = 0;
+
+            while(num > 0){
+                fs = num % 10;
+                num = Math.floor(num / 10);
+            }
+
+            let sum = fs + id;
+            console.log("Sum of first and last digits = "+sum);
+        }
+
+        sum(5289);
+        sum(1234);
+    </script>
+</body>
+
+</html>

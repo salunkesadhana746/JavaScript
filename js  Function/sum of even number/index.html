@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of even number</title>
+</head>
+
+<body>
+    <script>
+        //find sum of even number from 1 to n.
+
+        function sumofevennum(num) {
+            let sum = 0;
+
+            for (let i = 1; i <= num; i++) {
+                if (i % 2 == 0) {
+                    sum = sum + i;
+                }
+            }
+            console.log("sum of even num = "+sum);
+        }
+        sumofevennum(10);
+        sumofevennum(15);
+    </script>
+</body>
+
+</html>
