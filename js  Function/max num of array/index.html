@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max num of array</title>
+</head>
+
+<body>
+    <script>
+        //wap to find max num of array 
+
+        function maxnum(num) {
+            let max = num[0];
+
+            for (let i = 1; i < num.length; i++) {
+
+                if (num[i] > max) {
+                    max = num[i];
+                }
+            }
+
+            console.log("max num of array = " + max);
+        }
+
+        maxnum([22, 58, 6, 54, 87, 5]);
+    </script>
+</body>
+
+</html>
