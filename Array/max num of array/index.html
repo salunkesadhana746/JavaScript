@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>max num of array</title>
 </head>
+
 <body>
     <script>
         //wap to find max num of array
@@ -13,14 +15,20 @@
 
         let max = num[0];
 
-        for(let i=1; i < num.length; i++){
-            
-            if(num[i] > max){
-                max = num[i];
-            }
-        }
+        // for(let i=1; i < num.length; i++){
 
-        console.log("max num of array = "+ max);
+        //     if(num[i] > max){
+        //        max = num[i];
+        //    }
+        // }
+        num.forEach((e) => {
+            if (max < e) {
+                max = e;
+            }
+        })
+
+        console.log("max num of array = " + max);
     </script>
 </body>
+
 </html>

@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sum of array</title>
 </head>
+
 <body>
     <script>
         //wap to find sum of array
-
-        function sumofarray(arr){
+        const arr = [1, 2, 3, 4, 5];
+        
+        function sumofarray(arr) {
             let sum = 0;
 
-            for(let i =0; i< arr.length; i++){
+            for (let i = 0; i < arr.length; i++) {
                 sum = sum + arr[i];
             }
-
-            console.log("sum od array = "+sum);
+            return sum;
         }
 
-        sumofarray([1, 2, 3, 4, 5]);
+        const ans = sumofarray(arr);
+        console.log("sum of array = " + ans);
     </script>
 </body>
+
 </html>

@@ -10,21 +10,27 @@
 <body>
     <script>
         //wap to find max num of array 
-
+        const arr = [22, 58, 6, 54, 87, 5];
         function maxnum(num) {
             let max = num[0];
 
-            for (let i = 1; i < num.length; i++) {
+            //for (let i = 1; i < num.length; i++) {
 
-                if (num[i] > max) {
-                    max = num[i];
+            //    if (num[i] > max) {
+            //       max = num[i];
+            //   }
+            // }
+
+            arr.forEach((e) => {
+                if (max < e) {
+                    max = e;
                 }
-            }
-
-            console.log("max num of array = " + max);
+            });
+            return max;
         }
 
-        maxnum([22, 58, 6, 54, 87, 5]);
+        const ans = maxnum(arr);
+        console.log("max num of array = " + ans);
     </script>
 </body>
 
