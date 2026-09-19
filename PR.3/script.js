@@ -1,11 +1,12 @@
 // create a note making app, where user can create upto 150 characters note, user can also add more than one notes, and display all notes in grid view and boxes color should be different for each notes and text color should be light or dark as per box bg color and date and time of adding note.
 
-const input_note = document.getElementById("input-note");
-const input_btn = document.getElementById("input-btn");
+const input_note = document.getElementById("input-note"); //get input-note by id
+const input_btn = document.getElementById("input-btn"); //get input-btn by id
 
-const notes_box = document.getElementById("notes-box");
+const notes_box = document.getElementById("notes-box"); // get notes-box by id
 
 const handleCreateNote = () => {
+  // create function
   const value = input_note.value;
 
   if (value == "") {
