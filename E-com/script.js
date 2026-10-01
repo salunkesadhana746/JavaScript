@@ -35,6 +35,7 @@ const handleProductList = () => {
   allProduct.push(product);
   localStorage.setItem("products", JSON.stringify(allProduct));
   displayProducts();
+  clearInputBox();
 };
 
 addProductBtn.addEventListener("click", handleProductList);
@@ -71,7 +72,21 @@ const deleteProduct = (i) => {
   displayProducts();
 };
 
+let editIndex = null;
+
+const clearInputBox = () => {
+  inputProductName.value = "";
+  inputProductUrl.value = "";
+  inputProductDescription.value = "";
+  inputProductPrice.value = "";
+  inputProductDiscount.value = "";
+  inputProductCategory.value = "";
+  inputProductRating.value = "";
+};
+
 const updateProduct = (i) => {
+  editIndex = i;
+
   inputProductName.value = allProduct[i].name;
   inputProductUrl.value = allProduct[i].img;
   inputProductDescription.value = allProduct[i].description;
@@ -83,5 +98,27 @@ const updateProduct = (i) => {
   addProductBtn.classList = "d-none";
   editProductBtn.className = "btn btn-warning";
 };
+
+const handleEditProduct = () => {
+  allProduct[editIndex] = {
+    name: inputProductName.value,
+    img: inputProductUrl.value,
+    description: inputProductDescription.value,
+    price: inputProductPrice.value,
+    discount: inputProductDiscount.value,
+    category: inputProductCategory.value,
+    rating: inputProductRating.value,
+  };
+
+  localStorage.setItem("products", JSON.stringify(allProduct));
+  displayProducts();
+
+  editIndex = null;
+  clearInputBox();
+  editProductBtn.classList.add("d-none");
+  addProductBtn.classList.remove("d-none");
+};
+
+editProductBtn.addEventListener("click", handleEditProduct);
 
 displayProducts();
