@@ -34,28 +34,25 @@
             <div class="d-flex gap-3 col-5">
                 <input type="text" placeholder="Search here..." class="form-control" id="input-search" />
                 <button class="btn btn-primary" id="search-btn">Search</button>
+                <button class="btn btn-primary" id="reset-btn">Reset</button>
             </div>
 
-            <div class="dropdown">
-                <a class="form-control dropdown-toggle border border-1 border-secondary px-5 py-2 rounded text-decoration-none text-muted"
-                    href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    All Products
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Food</a></li>
-                    <li><a class="dropdown-item" href="#">Clothes</a></li>
-                    <li><a class="dropdown-item" href="#">Beauty</a></li>
-                    <li><a class="dropdown-item" href="#">Electronics</a></li>
-                    <li><a class="dropdown-item" href="#">Jewelry</a></li>
-                    <li><a class="dropdown-item" href="#">Kitchen</a></li>
-                </ul>
+            <div class="d-flex">
+                <select class="form-select mx-3" aria-label="Default select example" id="category-dropdown">
+                    <option value="all">All Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Beauty">Beauty</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Jewelry">Jewelry</option>
+                    <option value="Kitchen">Kitchen</option>
+                </select>
+                <select class="p-2 rounded" name="" id="price-filter">
+                    <option value="default">Default</option>
+                    <option value="max">Higher to Lower</option>
+                    <option value="min">Lower to Higher</option>
+                </select>
             </div>
-            <select class="p-2 rounded" name="" id="price-filter">
-                <option value="default">Default</option>
-                <option value="max">Higher to Lower</option>
-                <option value="min">Lower to Higher</option>
-            </select>
 
         </div>
 

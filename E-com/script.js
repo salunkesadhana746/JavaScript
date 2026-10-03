@@ -15,9 +15,13 @@ const addProductBtn = document.getElementById("add-btn");
 const editProductBtn = document.getElementById("edit-btn");
 
 const inputSearch = document.getElementById("input-search");
-const inputSearchBtn = document.getElementById("search-btn");
+const searchBtn = document.getElementById("search-btn");
+const resetBtn = document.getElementById("reset-btn");
 
 const productTbody = document.getElementById("product-tbody");
+
+const priceFilter = document.getElementById("price-filter");
+const categoryDropdown = document.getElementById("category-dropdown");
 
 let allProduct = JSON.parse(localStorage.getItem("products")) || [];
 
@@ -95,8 +99,8 @@ const updateProduct = (i) => {
   inputProductDiscount.value = allProduct[i].discount;
   inputProductRating.value = allProduct[i].rating;
 
-  addProductBtn.classList = "d-none";
-  editProductBtn.className = "btn btn-warning";
+  addProductBtn.classList.add("d-none");
+  editProductBtn.classList.remove("d-none");
 };
 
 const handleEditProduct = () => {
@@ -121,4 +125,51 @@ const handleEditProduct = () => {
 
 editProductBtn.addEventListener("click", handleEditProduct);
 
+const searchProducts = () => {
+  allProduct = JSON.parse(localStorage.getItem("products")) || [];
+  const search = inputSearch.value;
+  allProduct = allProduct.filter(
+    (product) =>
+      product.name.toLowerCase() == search.toLowerCase() ||
+      product.name.toLowerCase().includes(search.toLowerCase()) ||
+      product.category.toLowerCase().includes(search.toLowerCase()) ||
+      product.price.toLowerCase().includes(search.toLowerCase()) ||
+      product.rating.toLowerCase().includes(search.toLowerCase()),
+  );
+  displayProducts();
+};
+
+const handleReset = () => {
+  inputSearch.value = "";
+  allProduct = JSON.parse(localStorage.getItem("products")) || [];
+  displayProducts();
+};
+
+searchBtn.addEventListener("click", searchProducts);
+resetBtn.addEventListener("click", handleReset);
+
 displayProducts();
+
+priceFilter.onchange = () => {
+  allProduct = JSON.parse(localStorage.getItem("products")) || [];
+  console.log(priceFilter.value);
+  if (priceFilter.value == "max") {
+    allProduct.sort((a, b) => b.price - a.price);
+  } else if (priceFilter.value == "min") {
+    allProduct.sort((a, b) => a.price - b.price);
+  } else {
+    allProduct = JSON.parse(localStorage.getItem("products")) || [];
+  }
+  displayProducts();
+};
+
+categoryDropdown.onchange = () => {
+  let dropdown = categoryDropdown.value;
+  allProduct = JSON.parse(localStorage.getItem("products")) || [];
+
+  if (dropdown !== "all") {
+    allProduct = allProduct.filter((product) => product.category === dropdown);
+  }
+
+  displayProducts();
+};
