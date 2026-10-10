@@ -48,8 +48,21 @@ const addToCart = (id) => {
   fetch("https://dummyjson.com/products/" + id)
     .then((res) => res.json())
     .then((data) => {
-      cartList.push(data);
-      localStorage.setItem("carts", JSON.stringify(cartList));
+      // is entry is unique or not?
+      let isRepeat = false;
+      cartList.forEach((element) => {
+        if (element.id == data.id) {
+          element.qty++;
+          localStorage.setItem("carts", JSON.stringify(cartList));
+          isRepeat = true;
+        }
+      });
+      console.log("-------------");
+      if (isRepeat == false) {
+        data.qty = 1;
+        cartList.push(data);
+        localStorage.setItem("carts", JSON.stringify(cartList));
+      }
     });
 
   alert("Add to cart successfully !");
