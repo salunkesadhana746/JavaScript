@@ -4,35 +4,59 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ecom - user</title>
+    <title>Nykaa - Shop</title>
+
+    <!-- Bootstrap CSS for styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <nav class="navbar bg-body-tertiary mb-3">
+    <nav class="navbar bg-body-tertiary mb-3 sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold">Nykaa</a>
+            <a class="navbar-brand fw-bold" href="index.html">Nykaa</a>
+
             <div class="d-flex gap-3">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">
-                        Search
-                    </button>
+                <form class="d-flex" role="search" id="search-form">
+                    <input class="form-control me-2" type="search" id="search-input" placeholder="Search products"
+                        aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <a href="cart.html" class="btn btn-primary">View Cart</a>
+
+                <!-- Cart button with item count badge -->
+                <a href="cart.html" class="btn btn-primary position-relative">
+                    View Cart
+                    <span id="cart-count"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </a>
             </div>
         </div>
     </nav>
+
+    <!-- All products will be shown inside this div (added by script.js) -->
     <section class="container-fluid">
-        <div id="product-container" class="container d-flex gap-3 flex-wrap">
-        </div>
+        <div id="product-container" class="container d-flex gap-3 flex-wrap justify-content-center"></div>
     </section>
 
+    <!-- Toast message small popup at the bottom right corner -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="app-toast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toast-message"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (needed for the toast) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+    <!-- Our own JavaScript file -->
     <script src="script.js"></script>
 </body>
 
