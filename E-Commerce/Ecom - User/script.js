@@ -24,6 +24,7 @@ const updateCartCount = () => {
   cartCount.textContent = total;
 };
 
+//fetch product data
 const fetchProduct = () => {
   productContainer.innerHTML = `<div class="spinner-border mt-5" role="status"></div>`;
 
@@ -35,6 +36,7 @@ const fetchProduct = () => {
     });
 };
 
+//display product
 const displayProducts = (products) => {
   productContainer.innerHTML = "";
 
@@ -65,6 +67,7 @@ const displayProducts = (products) => {
   });
 };
 
+//add to card product
 const addToCart = (id) => {
   const product = allProducts.find((p) => p.id === id);
   if (!product) return;
@@ -100,7 +103,7 @@ productContainer.addEventListener("click", (e) => {
   if (btn) addToCart(Number(btn.dataset.id));
 });
 
-// ---------- search ----------
+// search
 const searchProducts = () => {
   const text = searchInput.value.trim().toLowerCase();
   const filtered = allProducts.filter(
@@ -118,6 +121,6 @@ searchForm.addEventListener("submit", (e) => {
 });
 searchInput.addEventListener("input", searchProducts);
 
-// ---------- start ----------
+// call function
 updateCartCount();
 fetchProduct();
