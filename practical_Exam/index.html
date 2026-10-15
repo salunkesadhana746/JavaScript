@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ecom - Exam</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="container-fluid">
+        <div class="container">
+            <h2 class="my-3">Product Listing</h2>
+
+            <div class="d-flex flex-column gap-3 m-3">
+                <input type="text" class="form-control" placeholder="Product Name..." id="input-product-name">
+                <input type="text" class="form-control" placeholder="Product Url..." id="input-product-url">
+                <input type="text" class="form-control" placeholder="Product Price..." id="input-product-price">
+                <input type="text" class="form-control" placeholder="Product Description..."
+                    id="input-product-description">
+                <input type="text" class="form-control" placeholder="Product Discount..." id="input-product-discount">
+                <input type="text" class="form-control" placeholder="Product Category..." id="input-product-category">
+                <input type="text" class="form-control" placeholder="Product Rating..." id="input-product-rating">
+                <button class="btn btn-primary" id="add-product-btn">Add Product</button>
+                <button class="btn btn-warning d-none" id="edit-product-btn">Edit Product</button>
+            </div>
+        </div>
+        <hr>
+        <div class="container my-5 d-flex text-center  gap-3">
+            <div class="d-flex gap-3 col-5">
+                <input type="text" placeholder="Search here..." class="form-control" id="input-search" />
+                <button class="btn btn-primary" id="search-btn">Search</button>
+                <button class="btn btn-primary" id="reset-btn">Reset</button>
+            </div>
+
+            <div class="d-flex gap-3">
+                <select class="form-select" aria-label="Default select example" id="category-all-product">
+                    <option selected>All Product</option>
+                    <option value="Food">Food</option>
+                    <option value="Jewelry">Jewelry</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Beauty">Beauty</option>
+                </select>
+
+                <select class="p-2 rounded" name="" id="price-filter">
+                    <option value="default">Default</option>
+                    <option value="max">Lowar to Highet</option>
+                    <option value="min">Higher to Lowar</option>
+                </select>
+            </div>
+        </div>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Preview</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="product-tbody"></tbody>
+            </table>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
